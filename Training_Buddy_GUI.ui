@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>968</width>
+    <height>723</height>
+   </rect>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>16777215</width>
+    <height>1000</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow {
+    background: #606060;
+
+}
+
+QPushButton {
+    background: #404040;
+	border-style: outset;
+	border-width: 2px;
+	border-color: gray;
+	border-radius: 4px;
+	color: white;
+
+}
+
+QLabel {
+	font-weight: bold;
+
+}
+
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <layout class="QVBoxLayout" name="overall_layout">
+      <item>
+       <layout class="QHBoxLayout" name="mode_buttons_layout">
+        <item>
+         <widget class="QPushButton" name="button_repetition">
+          <property name="text">
+           <string>Repetition</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="button_random_repetition">
+          <property name="text">
+           <string>Random Repetition</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="button_sequence">
+          <property name="text">
+           <string>Sequence</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="button_random_sequence">
+          <property name="text">
+           <string>Random Sequence</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="button_game">
+          <property name="text">
+           <string>Game Mode</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QTabWidget" name="rep_mode_tabs">
+        <property name="currentIndex">
+         <number>0</number>
+        </property>
+        <widget class="QWidget" name="tab">
+         <attribute name="title">
+          <string>Tab 1</string>
+         </attribute>
+         <layout class="QGridLayout" name="gridLayout_2">
+          <item row="0" column="0">
+           <layout class="QHBoxLayout" name="rep_hold_layout" stretch="1,0,3">
+            <item>
+             <layout class="QVBoxLayout" name="rep_edit_layout">
+              <item>
+               <widget class="QLabel" name="rep_label_op">
+                <property name="frameShape">
+                 <enum>QFrame::NoFrame</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Plain</enum>
+                </property>
+                <property name="text">
+                 <string>About the operation:</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="rep_start">
+                <property name="text">
+                 <string>Start This Repetition</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="rep_stop">
+                <property name="text">
+                 <string>Stop Device</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="rep_label_new">
+                <property name="text">
+                 <string>New Repetition:</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="rep_from_speech">
+                <property name="text">
+                 <string>From Speech</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="rep_from_ui">
+                <property name="text">
+                 <string>From UI</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="rep_lable_save_delete">
+                <property name="text">
+                 <string>About Repetition:</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="pushButton">
+                <property name="text">
+                 <string>Load Existing</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="rep_save">
+                <property name="text">
+                 <string>Save This</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="rep_delete">
+                <property name="text">
+                 <string>Delete This</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="rep_edit_spacer">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <widget class="Line" name="line">
+              <property name="lineWidth">
+               <number>3</number>
+              </property>
+              <property name="midLineWidth">
+               <number>3</number>
+              </property>
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QFormLayout" name="rep_parameter_layout">
+              <item row="0" column="0">
+               <widget class="QLabel" name="rep_label_ball_speed">
+                <property name="frameShape">
+                 <enum>QFrame::NoFrame</enum>
+                </property>
+                <property name="text">
+                 <string>Ball Speed</string>
+                </property>
+                <property name="scaledContents">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <widget class="QComboBox" name="combo_ball_speed"/>
+              </item>
+              <item row="1" column="0">
+               <widget class="QLabel" name="rep_label_spin_type">
+                <property name="text">
+                 <string>Spin Type</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="1">
+               <widget class="QComboBox" name="combo_spin_type"/>
+              </item>
+              <item row="2" column="0">
+               <widget class="QLabel" name="rep_label_spin_intensity">
+                <property name="text">
+                 <string>Spin Intensity</string>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="1">
+               <widget class="QComboBox" name="combo_spin_intensity"/>
+              </item>
+              <item row="3" column="0">
+               <widget class="QLabel" name="rep_label_ball_direction">
+                <property name="text">
+                 <string>Direction</string>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="1">
+               <widget class="QComboBox" name="combo_direction"/>
+              </item>
+              <item row="4" column="0">
+               <widget class="QLabel" name="rep_label_ball_height">
+                <property name="text">
+                 <string>Heigth</string>
+                </property>
+               </widget>
+              </item>
+              <item row="4" column="1">
+               <widget class="QComboBox" name="combo_height"/>
+              </item>
+              <item row="5" column="0">
+               <widget class="QLabel" name="rep_label_loader_speed">
+                <property name="text">
+                 <string>Loader Speed</string>
+                </property>
+               </widget>
+              </item>
+              <item row="5" column="1">
+               <widget class="QComboBox" name="combo_loader_speed"/>
+              </item>
+              <item row="6" column="0">
+               <widget class="QLabel" name="rep_label_count">
+                <property name="text">
+                 <string>Throw Count</string>
+                </property>
+               </widget>
+              </item>
+              <item row="6" column="1">
+               <widget class="QSpinBox" name="count_select"/>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item row="1" column="0">
+           <widget class="QWidget" name="widget" native="true"/>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="tab_2">
+         <attribute name="title">
+          <string>Tab 2</string>
+         </attribute>
+         <layout class="QGridLayout" name="gridLayout_3">
+          <item row="0" column="0">
+           <widget class="QTabWidget" name="seq_mode_tabs">
+            <property name="currentIndex">
+             <number>0</number>
+            </property>
+            <widget class="QWidget" name="tab_3">
+             <attribute name="title">
+              <string>Tab 1</string>
+             </attribute>
+             <layout class="QGridLayout" name="gridLayout_4">
+              <item row="0" column="0">
+               <layout class="QHBoxLayout" name="seq_hold_layout" stretch="1,3">
+                <item>
+                 <layout class="QVBoxLayout" name="seq_edit_layout">
+                  <item>
+                   <widget class="QLabel" name="seq_label_op">
+                    <property name="text">
+                     <string>About the operation:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="seq_start">
+                    <property name="text">
+                     <string>Start This Repetition</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="seq_stop">
+                    <property name="text">
+                     <string>Stop Device</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="seq_label_new">
+                    <property name="text">
+                     <string>New Sequence:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="seq_from_speech">
+                    <property name="text">
+                     <string>From Speech</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="seq_from_ui">
+                    <property name="text">
+                     <string>From UI</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="seq_label_save_delete">
+                    <property name="text">
+                     <string>About Sequence:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="seq_save">
+                    <property name="text">
+                     <string>Save This</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="seq_delete">
+                    <property name="text">
+                     <string>Delete This</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <spacer name="seq_edit_spacer">
+                    <property name="orientation">
+                     <enum>Qt::Vertical</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>20</width>
+                      <height>40</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <layout class="QVBoxLayout" name="verticalLayout_4">
+                  <item>
+                   <layout class="QHBoxLayout" name="horizontalLayout">
+                    <item>
+                     <spacer name="horizontalSpacer">
+                      <property name="orientation">
+                       <enum>Qt::Horizontal</enum>
+                      </property>
+                      <property name="sizeHint" stdset="0">
+                       <size>
+                        <width>40</width>
+                        <height>20</height>
+                       </size>
+                      </property>
+                     </spacer>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="pushButton_2">
+                      <property name="text">
+                       <string>Add Throw</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="pushButton_3">
+                      <property name="text">
+                       <string>Remove Throw</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                  <item>
+                   <widget class="QTableWidget" name="sequence_throws_table">
+                    <row>
+                     <property name="text">
+                      <string>Throw 1</string>
+                     </property>
+                    </row>
+                    <row>
+                     <property name="text">
+                      <string>Throw 2</string>
+                     </property>
+                    </row>
+                    <row>
+                     <property name="text">
+                      <string>Throw 3</string>
+                     </property>
+                    </row>
+                    <row>
+                     <property name="text">
+                      <string>Throw 4</string>
+                     </property>
+                    </row>
+                    <row>
+                     <property name="text">
+                      <string>Throw 5</string>
+                     </property>
+                    </row>
+                    <column>
+                     <property name="text">
+                      <string>Ball Speed</string>
+                     </property>
+                    </column>
+                    <column>
+                     <property name="text">
+                      <string>Spin Type</string>
+                     </property>
+                    </column>
+                    <column>
+                     <property name="text">
+                      <string>Spin Intensity</string>
+                     </property>
+                    </column>
+                    <column>
+                     <property name="text">
+                      <string>Direction</string>
+                     </property>
+                    </column>
+                    <column>
+                     <property name="text">
+                      <string>Height</string>
+                     </property>
+                    </column>
+                    <column>
+                     <property name="text">
+                      <string>Loader Speed</string>
+                     </property>
+                    </column>
+                    <item row="0" column="0">
+                     <property name="text">
+                      <string/>
+                     </property>
+                    </item>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="tab_4">
+             <attribute name="title">
+              <string>Tab 2</string>
+             </attribute>
+            </widget>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="1" column="0">
+     <layout class="QVBoxLayout" name="verticalLayout_2"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>968</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
